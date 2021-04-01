@@ -8,4 +8,4 @@ Yes it's a lot! But the outcome means you'll be able to:
 * learn how to integrate multiple Azure services in a simple robust architecture.  
 * understand the difference between a relational and NoSQL database.  
 
-Alright, let's get started!
+Alright, let's get started! Don't forget to view the accompanying [ACG Project here.](https://acloud.guru/series/acg-projects/view/402)
