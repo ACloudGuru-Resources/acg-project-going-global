@@ -1,0 +1,92 @@
+﻿@using ACGProjectGoGlobal.Web.Startup
+@model ACGProjectGoGlobal.Web.ViewModels.UserViewModel
+@{
+    ViewBag.ActiveMenu = PageNames.Home;
+}
+
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/js/views/home/index.js"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/js/views/home/index.min.js"></script>
+    </environment>
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="Name">Name</label>
+                @Html.TextBoxFor(m => Model.Name, new {@class = "form-control", type = "text", aria_describedby = "nameHelp", placeholder = "Enter name"})
+                @*<input type="text" class="form-control" id="userName" aria-describedby="nameHelp" placeholder="Enter name">*@
+                <small id="nameHelp" class="form-text text-muted">We'll never call you by your real name.</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="Profession">Profession</label>
+                @Html.TextBoxFor(m => Model.Profession, new {@class = "form-control", type = "text", aria_describedby = "professionHelp", placeholder = "Enter Profession"})
+                @*<input type="text" class="form-control" id="userProfession" aria-describedby="professionHelp" placeholder="Enter Profession">*@
+                <small id="professionHelp" class="form-text text-muted">What is your day job?</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="Budget">Budget</label>
+                @Html.TextBoxFor(m => Model.Budget, new {@class = "form-control", type = "number", aria_describedby = "budgetHelp", placeholder = "Enter Max Budget"})
+                @*<input type="number" class="form-control" id="userBudget" aria-describedby="budgetHelp" placeholder="Enter Max Budget">*@
+                <small id="budgetHelp" class="form-text text-muted">Are you even worth our time?</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="ContractID">Contract</label>
+                @Html.TextBoxFor(m => Model.ContractID, new {@class = "form-control", type = "number", aria_describedby = "contractHelp", placeholder = "Enter Contract ID"})
+                @*<input type="number" class="form-control" id="userContract" aria-describedby="contractHelp" placeholder="Enter Contract ID">*@
+                <small id="contractHelp" class="form-text text-muted">We probably won't use this value.</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="DeliveryDate">Date of Delivery</label>
+                @Html.TextBoxFor(m => Model.DeliveryDate, new {@class = "form-control", type = "date", aria_describedby = "deliveryHelp", placeholder = "Enter Preferred Delivery Date"})
+                @*<input type="date" class="form-control" id="userDeliveryDate" aria-describedby="deliveryHelp" placeholder="Enter Preferred Delivery Date">*@
+                <small id="deliveryHelp" class="form-text text-muted">This is just to make you feel you have any say in the process.</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="ImagePath">Image Path</label>
+                @Html.TextBoxFor(m => Model.ImagePath, new {@class = "form-control", type = "file", aria_describedby = "imagepathHelp", placeholder = "Click browse to select file"})
+                <small id="imagepathHelp" class="form-text text-muted">Where is the image you want to use?</small>
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-lg-4">
+                <div class="center">
+                    <div class="bar"></div>
+                    <div class="title">Drop photo to upload</div>
+                    <div class="dropzone">
+                        <div class="content">
+                            <img src="https://100dayscss.com/codepen/upload.svg" class="upload">
+                            <span class="filename"></span>
+                            <input type="file" class="input">
+                        </div>
+                    </div>
+                    <img src="https://100dayscss.com/codepen/syncing.svg" class="syncing">
+                    <img src="https://100dayscss.com/codepen/checkmark.svg" class="done">
+                    <div class="upload-btn">Upload file</div>
+                </div>
+            </div>
+        </div>*@
+        <div class="row clearfix">
+            <div class="col-lg-4 text-right">
+                <button type="submit" class="btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+}
